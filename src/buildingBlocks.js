@@ -54,6 +54,13 @@ exports.getBuildingBlocks = ({application, baseUri}) => {
             defaultsFilename: 'connectionSettings.json',
             template: _.join([baseUri, 'buildingBlocks/connections/connections.json'], '/'),
             deploymentName: 'conn'
+        },
+        {
+            type: 'CosmosDb',
+            process: require('./core/cosmosDbSettings').process,
+            defaultsFilename: 'cosmosDbSettings.json',
+            template: _.join([baseUri, 'buildingBlocks/cosmosDbs/cosmosDbs.json'], '/'),
+            deploymentName: 'cdb'
         }
     ];
 };
